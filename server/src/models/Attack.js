@@ -1,14 +1,19 @@
-// create your User model here
 const { DataTypes } = require("sequelize");
 const { Sequelize, sequelize } = require("../db/config");
 
-let User = sequelize.define("User", {
-  username: {
+let Attack = sequelize.define("Attack", {
+  title: {
     type: DataTypes.STRING
+  },
+  mojoCost: {
+    type: DataTypes.INTEGER
+  },
+  stamina : {
+    type: DataTypes.INTEGER
   }
 });
 
 
 module.exports = {
-  User
+  Attack
 };
