@@ -2,20 +2,19 @@ const { describe, it, expect, beforeAll, afterAll } = require("@jest/globals");
 const { User } = require(".");
 const db = require("../db/config");
 
-// define in global scope
-let user;
-
-// clear db and create new user before tests
+// clear db before tests
 beforeAll(async () => {
   await db.sync({ force: true });
-  user = await User.create({ username: "gandalf" });
 });
 
-// clear db after tests
-afterAll(async () => await db.close());
+// close db after tests
+afterAll(async () => {
+  await db.close();
+});
 
 describe("User", () => {
   it("has an id", async () => {
+    const user = await User.create({ username: "gandalf" });
     expect(user).toHaveProperty("id");
   });
 
