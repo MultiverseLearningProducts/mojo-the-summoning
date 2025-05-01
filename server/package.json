@@ -7,9 +7,7 @@
     "test": "jest --runInBand --watchAll",
     "seed": "node src/db/seed.js",
     "dev": "nodemon src/run.js",
-    "start": "node src/run.js",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "start": "node src/run.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,12 +18,6 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.6.2",
-    "eslint-plugin-promise": "^6.1.1",
     "nodemon": "^3.1.7",
     "supertest": "^6.3.3"
   }
