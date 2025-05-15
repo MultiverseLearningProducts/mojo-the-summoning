@@ -82,9 +82,16 @@ async function seed() {
   // Create associations between cards and attacks
   const cardAttackPromises = [];
   for (const card of createdCards) {
-    const attackCount = randInt(2, 4); // Assign 2-4 random attacks to each card
+    // choose 2-4 random attacks to assign to each card
+    const attackCount = randInt(2, 4); 
+    const cardAttacks = [];
     for (let i = 0; i < attackCount; i++) {
-      const j = randInt(0, attacks.length);
+      let j = randInt(0, attacks.length);
+      // attacks must be unique to this card
+      while (cardAttacks.includes(j)) {
+        j = randInt(0, attacks.length);
+      }
+      cardAttacks.push(j);
       cardAttackPromises.push(card.addAttack(attacks[j]));
     }
   }
