@@ -4,7 +4,7 @@
   "description": "",
   "main": "run.js",
   "scripts": {
-    "test": "jest --runInBand --watchAll",
+    "test": "jest --runInBand",
     "seed": "node src/db/seed.js",
     "dev": "nodemon src/run.js",
     "start": "node src/run.js"
